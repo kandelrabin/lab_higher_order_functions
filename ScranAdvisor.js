@@ -20,6 +20,9 @@ ScranAdvisor.prototype.findAllRestaurants = function() {
 }
 
 // Find all the restaurants from a given city (pass in the city name, e.g. "Glasgow" should return 4 restaurants)
+ScranAdvisor.prototype.findRestaurantByCity = function(city){
+    return this.restaurants.filter((value) => value["location"]["town"] == city);
+}
 
 // extension
 // Create a method that finds which one is the most common cuisine
