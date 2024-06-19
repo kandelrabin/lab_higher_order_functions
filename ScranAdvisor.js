@@ -26,6 +26,32 @@ ScranAdvisor.prototype.findRestaurantByCity = function(city){
 
 // extension
 // Create a method that finds which one is the most common cuisine
+ScranAdvisor.prototype.findMostCommonCuisine = function(){
+    // calculate #occurances for each couisine
+    // pick the couisine with highest #occurances
+    let cuisineArray = [];
+    this.restaurants.forEach((restaurant) => {
+        cuisineArray = cuisineArray.concat(restaurant.cuisines);
+    });
+    return this.mode(cuisineArray);
+}
+
+ScranAdvisor.prototype.mode = function(array){
+    let occurence = {};
+    let max = "";
+    let maxFrequency = 0;
+
+    array.forEach((value) => {
+        occurence[value] ? occurence[value]++ : occurence[value] = 1;
+
+        if (occurence[value] > maxFrequency){
+            max = value;
+            maxFrequency = occurence[value];
+        }
+    });
+    return max;
+}
+
 // Create a method that allows us to find restaurants if a given substring is found in its name - e.g. the method searchByName("ru")
 
 

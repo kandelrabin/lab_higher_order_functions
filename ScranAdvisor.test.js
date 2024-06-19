@@ -124,7 +124,17 @@ describe('ScranAdvisor', () => {
 
     // Extensions
 
-    test.skip('can find the most common cuisine type', () => {
+    test("can find mode of an array", () =>{
+      const sampleArray = ["apple", "banana", "orange", "grape", "apple"];
+      const expected = "apple";
+      const actual = scranAdvisor.mode(sampleArray);
+      expect(actual).toEqual(expected);
+    })
+
+    test('can find the most common cuisine type', () => {
+      const expected = "JAPANESE";
+      const actual = scranAdvisor.findMostCommonCuisine();
+      expect(actual).toEqual(expected);
 
     })
 
