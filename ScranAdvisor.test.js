@@ -13,13 +13,13 @@ describe('ScranAdvisor', () => {
         expect(scranAdvisor.restaurants).not.toBeNull();
     })
 
-    test.skip('can count the number of restaurants', () => {
+    test('can count the number of restaurants', () => {
         const expected = 23;
-        const actual = null;
+        const actual = scranAdvisor.countRestaurants();
         expect(actual).toEqual(expected);
     })
 
-    test.skip('can find Happy Lamb Hot Pot restaurant by full name', () => {
+    test('can find Happy Lamb Hot Pot restaurant by full name', () => {
         const expected = {
             "id": 8,
             "name": "Happy Lamb Hot Pot",
@@ -37,11 +37,11 @@ describe('ScranAdvisor', () => {
             "latitude": 52.475159788534754,
             "longitude": -1.8966440079643896
         };
-        const actual = null;
+        const actual = scranAdvisor.findRestaurantByName("Happy Lamb Hot Pot");
         expect(actual).toEqual(expected);
     })
 
-    test.skip('can find the name of all restaurants', () => {
+    test('can find the name of all restaurants', () => {
         const expected = [
             'Oro',
             'Halloumi South',
@@ -67,7 +67,7 @@ describe('ScranAdvisor', () => {
             "Gopal's Corner Victoria",
             'The Gordon Highlander'
           ]
-          const actual = null;
+          const actual = scranAdvisor.findAllRestaurants();
           expect(actual).toEqual(expected);
     })
 
