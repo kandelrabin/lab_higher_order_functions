@@ -10,18 +10,18 @@ ScranAdvisor.prototype.countRestaurants = function(){
 
 // Find a restaurant by its name (full name)
 ScranAdvisor.prototype.findRestaurantByName = function(name){
-    const result = this.restaurants.filter((value) => value["name"] == name);
+    const result = this.restaurants.filter((restaurant) => restaurant["name"] == name);
     return result.pop();
 }
 
 // Return an array containing each restaurant's name
 ScranAdvisor.prototype.findAllRestaurants = function() {
-    return this.restaurants.map((value) => value["name"]);
+    return this.restaurants.map((restaurant) => restaurant["name"]);
 }
 
 // Find all the restaurants from a given city (pass in the city name, e.g. "Glasgow" should return 4 restaurants)
 ScranAdvisor.prototype.findRestaurantByCity = function(city){
-    return this.restaurants.filter((value) => value["location"]["town"] == city);
+    return this.restaurants.filter((restaurant) => restaurant["location"]["town"] == city);
 }
 
 // extension
@@ -53,7 +53,9 @@ ScranAdvisor.prototype.mode = function(array){
 }
 
 // Create a method that allows us to find restaurants if a given substring is found in its name - e.g. the method searchByName("ru")
-
+ScranAdvisor.prototype.findRestaurantsBySubString = function(subString) {
+    return result = this.restaurants.filter((restaurant) => restaurant["name"].toLowerCase().includes(subString));
+}
 
 
 module.exports = ScranAdvisor;
